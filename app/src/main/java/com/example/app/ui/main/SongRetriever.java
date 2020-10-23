@@ -3,13 +3,16 @@ package com.example.app.ui.main;
 import android.media.MediaMetadataRetriever;
 import android.os.Environment;
 
+import androidx.annotation.NonNull;
+
 import java.io.File;
 import java.util.ArrayList;
 
 public class SongRetriever {
-    final String MEDIA_PATH = Environment.getExternalStorageDirectory() + "";
-    final int DEFAULT_SIZE = 20;
+    private final String MEDIA_PATH = Environment.getExternalStorageDirectory().toString() + "/Music/";
+    private final int DEFAULT_SIZE = 20;
 
+    @NonNull
     private ArrayList<String> getSongURLList(String path){
         ArrayList<String> fileList = new ArrayList<String>(DEFAULT_SIZE);
 
@@ -50,7 +53,5 @@ public class SongRetriever {
 
         return songList;
     }
-
-
 
 }

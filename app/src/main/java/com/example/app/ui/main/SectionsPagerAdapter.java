@@ -11,15 +11,20 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.app.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
     private final Context mContext;
+    private final ArrayList<Song> songList;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public SectionsPagerAdapter(Context context, FragmentManager fm, ArrayList<Song> songs) {
         super(fm);
         mContext = context;
+        songList = songs;
     }
 
     @NonNull
@@ -31,7 +36,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new AlbumTab();
             default:
-                return new SongTab();
+                return new SongTab(songList);
         }
     }
 

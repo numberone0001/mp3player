@@ -3,4 +3,5 @@
     <string name="tab_text_1">Playlists</string>
     <string name="tab_text_2">Albums</string>
     <string name="tab_text_3">Songs</string>
+    <string name="refresh">Refresh</string>
 </resources>
